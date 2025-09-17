@@ -5,6 +5,8 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import { WalletProvider } from "@/contexts/WalletContext"
+import Navbar from "@/components/Navbar"
 
 export const metadata: Metadata = {
   title: "TimeLockBox - Secure Time-Locked Escrow on Algorand",
@@ -20,9 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} min-h-screen flex flex-col`}>
+        <WalletProvider>
+          <Navbar />
+          <main className="flex-1">
+            <Suspense fallback={null}>
+              {children}
+            </Suspense>
+          </main>
+          <Analytics />
+        </WalletProvider>
       </body>
     </html>
   )
