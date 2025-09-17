@@ -62,3 +62,7 @@ Payments are **visible but untouchable** until released, eliminating scams and e
 ## 📂 Project Structure
 
 4. Vercel deploys the latest version from this repository
+
+
+[https://lora.algokit.io/testnet/application/745913280](https://lora.algokit.io/testnet/application/745913280)
+[https://lora.algokit.io/testnet/application/745913281](https://lora.algokit.io/testnet/application/745913281)
